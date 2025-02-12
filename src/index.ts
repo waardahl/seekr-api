@@ -1,8 +1,9 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import ollama from 'ollama'
+import { Ollama } from 'ollama'
 
 const app = new Hono()
+const ollama = new Ollama({ host: 'http://ollama:11434' })
 
 app.get('/', (c) => {
   return c.text('Hello Seekr!')
